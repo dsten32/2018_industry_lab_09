@@ -26,11 +26,11 @@ public class ExerciseThree_Lists {
 
         // Should print [A]
         // TODO Uncomment this line once you've completed the intersection method
-        // System.out.println(Arrays.toString(intersection(testList1, testList2).toArray()));
+         System.out.println(Arrays.toString(intersection(testList1, testList2).toArray()));
 
         // Should print [B, C]
         // TODO Uncomment this line once you've completed the difference method
-        // System.out.println(Arrays.toString(difference(testList1, testList2).toArray()));
+         System.out.println(Arrays.toString(difference(testList1, testList2).toArray()));
 
     }
 
@@ -47,15 +47,38 @@ public class ExerciseThree_Lists {
         List<String> result = new ArrayList<>();
 
         // TODO Add all items from list1 and list2 to the result
+        result.addAll(list1);
+        result.addAll(list2);
 
         return result;
 
     }
 
     // TODO Write an intersection method
+    private List<String> intersection(List<String> list1, List<String> list2){
+        List<String> result = new ArrayList<>();
 
+        for (String e : list1) {
+                if (list2.contains(e)) {
+                    result.add(e);
+                }
+        }
+
+        return result;
+    }
 
     // TODO Write a difference method
+    private List<String> difference(List<String> list1, List<String> list2){
+        List<String> result = new ArrayList<>();
+
+        for (String e : list1) {
+            if (!list2.contains(e)) {
+                result.add(e);
+            }
+        }
+
+        return result;
+    }
 
 
     /**
