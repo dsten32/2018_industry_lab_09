@@ -2,6 +2,7 @@ package ictgradschool.industry.collections.ex04;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Iterator;
 
 /**
  * Created by Andrew Meads on 25/03/2017.
@@ -27,15 +28,19 @@ public class PancakeShop {
         System.out.println("We have " + customerQueue.size() + " customers today, and have made " +
                 pancakeStack.size() + " pancakes. Hope it's enough!");
 
+
+
         try {
 
-            Customer customer = customerQueue.pollFirst();
+
+
             // TODO modify this line to get the first customer in line. You should use a "poll" method, which will
             // TODO return null if there are no more customers left.
             // HINT: Remember, queues are FIFO.
 
-
-            while ((customer = null) != null) {
+            Customer customer = customerQueue.pollFirst();
+//            while ((customer = null) != null) {
+            while (customer  != null) {
 
                 System.out.println(customer.getName() + " sat at the table. They want to eat "
                         + customer.getBellySize() + " pancakes for lunch!");
@@ -43,6 +48,7 @@ public class PancakeShop {
 
                 customer.eat(this.pancakeStack);
                 System.out.println(customer.getName() + " is happy and full!");
+                customer = customerQueue.pollFirst();
             }
 
             System.out.println("We fed everyone today!");

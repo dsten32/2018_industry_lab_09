@@ -54,7 +54,7 @@ public class Customer {
             }
         }
 
-        System.out.println(this.name + " ate " + this.bellySize + "pancakes");
+        System.out.println(this.name + " ate " + this.bellySize + " pancakes");
 
     }
 
