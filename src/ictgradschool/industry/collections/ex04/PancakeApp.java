@@ -1,5 +1,6 @@
 package ictgradschool.industry.collections.ex04;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
@@ -32,8 +33,8 @@ public class PancakeApp {
         // Each day there'll be between 100 - 200 customers
         int numCustomers = Util.randomValueBetwen(100, 200);
 
-        // TODO Initialize the queue variable appropriately
-        Deque<Customer> queue = null;
+        // TODOne Initialize the queue variable appropriately
+        Deque<Customer> queue = new ArrayDeque<>();
 
         for (int i = 1; i <= numCustomers; i++) {
 
@@ -41,8 +42,9 @@ public class PancakeApp {
             int bellySize = Util.randomValueBetwen(1, 10);
             Customer customer = new Customer(bellySize, nameGen.getRandomName() + " [" + i + "]");
 
-            // TODO Add customer to the queue.
+            // TODOne Add customer to the queue.
             // HINT: Remember, queues are First-In-First-Out.
+            queue.addLast(customer);
 
         }
 

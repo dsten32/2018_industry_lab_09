@@ -44,7 +44,17 @@ public class Customer {
 
         int desiredMealSize = this.bellySize;
 
-        throw new HungryException(this.name + " is still hungry :(");
+        while (desiredMealSize>0) {
+            Pancake pancake = pancakes.pollLast();
+            if (pancake!=null) {
+                System.out.println(name + " ate " + pancake.toString());
+                desiredMealSize--;
+            }else if(pancake==null && desiredMealSize>0){
+                throw new HungryException(this.name + " is still hungry :(");
+            }
+        }
+
+        System.out.println(this.name + " ate " + this.bellySize + "pancakes");
 
     }
 
