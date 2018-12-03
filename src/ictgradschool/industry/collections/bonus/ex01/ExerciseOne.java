@@ -19,14 +19,14 @@ public class ExerciseOne {
         List<Object> strings = new ArrayList<>();
         strings.add("Hello");
         strings.add("hello");
-        strings.add(Math.PI); // Umm.... this seems fishy...
+//        strings.add(Math.PI); // Umm.... this seems fishy...
         strings.add("HELLO");
 
         // Create a list of Integers
         List<Object> ints = new ArrayList<>();
         ints.add(3);
         ints.add(2);
-        ints.add("Not actually a number"); // Someone doesn't know how to code...
+//        ints.add("Not actually a number"); // Someone doesn't know how to code...
         ints.add(4624);
         ints.add(397);
 
