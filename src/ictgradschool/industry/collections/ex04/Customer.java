@@ -30,7 +30,7 @@ public class Customer {
      */
     public void eat(Deque<Pancake> pancakes) throws HungryException {
 
-        // TODO Implement this method. The method logic should be as follows:
+        // TODOne Implement this method. The method logic should be as follows:
         /*
          * While this customer wants to eat more pancakes
          * - Get the top pancake of the stack (LIFO)

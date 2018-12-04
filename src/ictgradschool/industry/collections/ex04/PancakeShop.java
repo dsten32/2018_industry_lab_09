@@ -34,8 +34,8 @@ public class PancakeShop {
 
 
 
-            // TODO modify this line to get the first customer in line. You should use a "poll" method, which will
-            // TODO return null if there are no more customers left.
+            // TODOne modify this line to get the first customer in line. You should use a "poll" method, which will
+            // TODOne return null if there are no more customers left.
             // HINT: Remember, queues are FIFO.
 
             Customer customer = customerQueue.pollFirst();

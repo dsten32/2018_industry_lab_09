@@ -75,7 +75,7 @@ public class ShapeBox {
                 ", totalPerimeter=" + twoDPFormat.format(getTotalPerimeter()) +
                 ", storage= [\n";
 
-        // TODO Use an iterator to loop through all shapes in the list, and add their information to the info string.
+        // TODOne Use an iterator to loop through all shapes in the list, and add their information to the info string.
         // HINT: Info about a shape can be obtained using its toString() method.
         Iterator<Shape> iterbox = storage.iterator();
         while (iterbox.hasNext()){
