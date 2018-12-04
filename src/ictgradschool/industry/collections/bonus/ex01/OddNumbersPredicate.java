@@ -3,7 +3,7 @@ package ictgradschool.industry.collections.bonus.ex01;
 /**
  * Created by Andrew Meads on 25/03/2017.
  */
-public class OddNumbersPredicate implements IPredicate {
+public class OddNumbersPredicate implements IPredicate<Integer> {
 
     /**
      * Tests if the given object is an odd integer.
@@ -13,8 +13,8 @@ public class OddNumbersPredicate implements IPredicate {
      * @throws ClassCastException if the provided object is not an Integer.
      */
     @Override
-    public boolean test(Object obj) {
-        Integer i = (Integer) obj;
-        return i % 2 == 1;
+    public boolean test(Integer obj) {
+//        Integer i = (Integer) obj;
+        return obj % 2 == 1;
     }
 }

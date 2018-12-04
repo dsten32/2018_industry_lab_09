@@ -43,15 +43,26 @@ public class TesterClass {
         }
 
         System.out.println("the new arraylist2: "+arrayList2);
-//todo fix enhanced loop
+
+
 //        for (String a : arrayList2) {
 //            String b = a.toLowerCase();
-//            arrayList2.remove(a);
-//            arrayList2.add(b);
+//            arrayList2.set(arrayList2.indexOf(a),b);
 //        }
+//        System.out.println("enhanced for looped without i; counter arraylist2: "+arrayList2);
+//        System.out.println();
 
-        System.out.println("enhanced for looped the lowercase arraylist2: "+arrayList2);
+
+        int j =0;
+        for (String a : arrayList2) {
+            String b = a.toLowerCase();
+            arrayList2.set(j,b);
+            j++;
+        }
+        System.out.println("enhanced for looped with i; counter arraylist2: "+arrayList2);
         System.out.println();
+
+
 
         // iterator way
         String[] array3 = {"ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN","EIGHT","NINE"};
@@ -65,15 +76,23 @@ public class TesterClass {
 
         System.out.println("the new arraylist3: "+arrayList3);
 
-//        Iterator<String> theIterator = arrayList.iterator();
-//
+        Iterator<String> theIterator = arrayList3.iterator();
+
 //        while (theIterator.hasNext()) {
 //            String a = theIterator.next();
-//            arrayList.add(a.toLowerCase());
+//            arrayList3.set(arrayList3.indexOf(a),a.toLowerCase());
 //        }
+//        System.out.println("iterator looped the without i; arraylist3: "+arrayList3);
+
+        int k=0;
+        while (theIterator.hasNext()) {
+            String a = theIterator.next();
+            arrayList3.set(k,a.toLowerCase());
+            k++;
+        }
+        System.out.println("iterator looped the with i; arraylist3: "+arrayList3);
 
 
-        System.out.println("iterator looped the lowercase arraylist3: "+arrayList3);
 
 
     }

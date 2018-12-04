@@ -3,7 +3,7 @@ package ictgradschool.industry.collections.bonus.ex01;
 /**
  * Created by Andrew Meads on 25/03/2017.
  */
-public class UpperCaseStringPredicate implements IPredicate  {
+public class UpperCaseStringPredicate implements IPredicate<String>  {
 
     /**
      * Tests whether the given object is a String that's completely upper-case.
@@ -13,9 +13,9 @@ public class UpperCaseStringPredicate implements IPredicate  {
      * @throws ClassCastException if the given object is not a String.
      */
     @Override
-    public boolean test(Object obj) {
-        String s = (String) obj;
-        String upperCase = s.toUpperCase();
-        return s.equals(upperCase);
+    public boolean test(String obj) {
+//        String s = (String) obj;
+        String upperCase = obj.toUpperCase();
+        return obj.equals(upperCase);
     }
 }

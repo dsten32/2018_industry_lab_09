@@ -16,14 +16,14 @@ public class ExerciseOne {
     private void start() {
 
         // Create a list of Strings
-        List<Object> strings = new ArrayList<>();
+        List<String> strings = new ArrayList<>();
         strings.add("Hello");
         strings.add("hello");
 //        strings.add(Math.PI); // Umm.... this seems fishy...
         strings.add("HELLO");
 
         // Create a list of Integers
-        List<Object> ints = new ArrayList<>();
+        List<Integer> ints = new ArrayList<>();
         ints.add(3);
         ints.add(2);
 //        ints.add("Not actually a number"); // Someone doesn't know how to code...
@@ -34,7 +34,7 @@ public class ExerciseOne {
         filterList(strings, new UpperCaseStringPredicate());
 
         // Filter the list of Integers, removing any which aren't odd numbers
-        filterList(ints, new UpperCaseStringPredicate());
+        filterList(ints, new OddNumbersPredicate());
 
         // Print out the items left in the strings list - should just be "HELLO".
         System.out.println("Strings:");
@@ -58,9 +58,9 @@ public class ExerciseOne {
      * @param list
      * @param predicate
      */
-    private void filterList(List<Object> list, IPredicate predicate) {
+    private <T> void filterList(List<T> list, IPredicate predicate) {
 
-        Iterator<Object> iter = list.iterator();
+        Iterator<T> iter = list.iterator();
         while (iter.hasNext()) {
             Object obj = iter.next();
             if (!predicate.test(obj)) {
