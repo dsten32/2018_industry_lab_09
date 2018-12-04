@@ -37,9 +37,9 @@ public class ExerciseTwo {
         polygons.add(new RegularPolygon(16, 3));
 
         // TODO These next three lines cause compile errors. Uncomment them when you've changed ShapeBox to allow this.
-        // box.addShapes(circles);
-        // box.addShapes(rectangles);
-        // box.addShapes(polygons);
+         box.addShapes(circles);
+         box.addShapes(rectangles);
+         box.addShapes(polygons);
 
         // Will print the ShapeBox's toString() method.
         System.out.println(box);

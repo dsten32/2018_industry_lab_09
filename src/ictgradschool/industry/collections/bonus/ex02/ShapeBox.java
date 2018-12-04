@@ -2,6 +2,8 @@ package ictgradschool.industry.collections.bonus.ex02;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -29,24 +31,34 @@ public class ShapeBox {
      * TODO modify the method signature so that things like Lists of Rectangles and Lists of Circles can be added, rather than just Lists of Shapes.
      * @param shapes the shapes to add
      */
-    public void addShapes(List<Shape> shapes) {
+    public <T> void addShapes(List<T> shapes) {
 
-        storage.addAll(shapes);
+        storage.addAll((Collection<? extends Shape>) shapes);
     }
 
     public double getTotalPerimeter() {
 
         // TODO Use a normal for-loop to add up the perimeter of all shapes in the list, and return the sum.
         // HINT: A single shape's perimeter can be obtained using the getPerimeter() method.
+        double tot=0;
+        for (int i = 0; i < storage.size(); i++) {
+            tot+=storage.get(i).getPerimeter();
+        }
 
-        return 0.0;
+        return tot;
     }
 
     public double getTotalArea() {
 
-        // TODO Use an enhanced for-loop to add up the area of all shapes in the list, and return the sum.
+        // TODOne Use an enhanced for-loop to add up the area of all shapes in the list, and return the sum.
         // HINT: A single shape's area can be obtained using the getArea() method.
-        return 0.0;
+        double area=0;
+        for (Shape a :storage
+             ) {
+            area+=a.getArea();
+        }
+
+        return area;
     }
 
     @Override
@@ -55,8 +67,8 @@ public class ShapeBox {
         // This formatter can be used to format numbers to 2DP when converting them to Strings
         NumberFormat twoDPFormat = new DecimalFormat("#.##");
 
-        // TODO Set numShapes to the size of the storage list.
-        int numShapes = 0;
+        // TODOne Set numShapes to the size of the storage list.
+        int numShapes = storage.size();
 
         String info = "ShapeBox [numShapes=" +numShapes +
                 ", totalArea=" + twoDPFormat.format(getTotalArea()) +
@@ -65,6 +77,12 @@ public class ShapeBox {
 
         // TODO Use an iterator to loop through all shapes in the list, and add their information to the info string.
         // HINT: Info about a shape can be obtained using its toString() method.
+        Iterator<Shape> iterbox = storage.iterator();
+        while (iterbox.hasNext()){
+            Shape a = iterbox.next();
+            info+=a.toString();
+        }
+
 
         info += "]]";
 
