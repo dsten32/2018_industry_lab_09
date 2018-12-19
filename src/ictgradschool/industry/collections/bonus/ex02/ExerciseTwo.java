@@ -1,5 +1,6 @@
 package ictgradschool.industry.collections.bonus.ex02;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ExerciseTwo {
         polygons.add(new RegularPolygon(10, 4));
         polygons.add(new RegularPolygon(16, 3));
 
-        // TODO These next three lines cause compile errors. Uncomment them when you've changed ShapeBox to allow this.
+        // TODOne These next three lines cause compile errors. Uncomment them when you've changed ShapeBox to allow this.
          box.addShapes(circles);
          box.addShapes(rectangles);
          box.addShapes(polygons);
@@ -46,6 +47,9 @@ public class ExerciseTwo {
 
         // TODO Answer this question: What is the total area of all  15 shapes we've created here (to 2dp)?
         // Total area:
+        DecimalFormat df = new DecimalFormat("####.####");
+        System.out.print(df.format(box.getTotalArea()));
+
     }
 
     /**

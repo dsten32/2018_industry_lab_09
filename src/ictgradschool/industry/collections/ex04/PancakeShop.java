@@ -31,9 +31,6 @@ public class PancakeShop {
 
 
         try {
-
-
-
             // TODOne modify this line to get the first customer in line. You should use a "poll" method, which will
             // TODOne return null if there are no more customers left.
             // HINT: Remember, queues are FIFO.
